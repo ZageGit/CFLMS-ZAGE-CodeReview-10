@@ -1,10 +1,24 @@
 body{
-    background-image: url(../assets/background.jpg);
+    background-image: url(../assets/library.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#cd_body{
+    background-image: url(../assets/music.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#book_body{
+    background-image: url(../assets/books.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#dvd_body{
+    background-image: url(../assets/dvds.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-
 .jumbotron {
-    backgro
+    background-color: rgb(255, 255, 255, 0.6);
 }
