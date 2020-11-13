@@ -28,74 +28,122 @@ if ($_GET['inv_id']) {
 
 </head>
 <body>
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+  <a class="navbar-brand" href="index.php">XTREME LIBRARY</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
 
-	<fieldset>
-   <legend>Update Inventory</legend>
+      <li class="nav-item active">
+        <a class="nav-link" href="inventory.php">All items</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="books.php">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cds.php">CD's</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="dvds.php">DVD's</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="create.php">Create</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-   <form action="actions/a_update.php"  method="post">
-       <table  cellspacing="0" cellpadding= "0">
-       <tr>
-               <th>Title</th >
-               <td><input  type="text" name="title"  placeholder="Title" /></td >
-           </tr>    
-           <tr>
-               <th>Type</th>
-               <td><input  type="text" name= "type" placeholder="Type" /></td>
-           </tr>
-           <tr>
-               <th>Author</th>
-               <td><input  type="text" name= "author" placeholder="Author" /></td>
-           </tr>
-           <tr>
-               <th>Author First Name</th>
-               <td><input  type="text" name= "auth_first_name" placeholder="auth_first_name"/></td>
-           </tr>
-           <tr>
-               <th>Author Last Name</th>
-               <td><input  type="text" name= "auth_last_name" placeholder="auth_last_name"/></td>
-           </tr>
 
-           <tr>
-               <th>Image</th>
-               <td><input type="text"  name="image" placeholder ="Image" /></td>
-           </tr>
-           <tr>
-               <th>ISBN</th>
-               <td><input type="text"  name="ISBN" placeholder ="ISBN"/></td>
-           </tr>
-           <tr>
-               <th>Publisher</th>
-               <td><input type="text"  name="publisher" placeholder ="Publisher"/></td>
-           </tr>
-           <tr>
-               <th>Publish Date</th>
-               <td><input type="text"  name="publish_date" placeholder ="Publish Date"/></td>
-           </tr>
-           <tr>
-               <th>Publisher Address</th>
-               <td><input type="text"  name="pub_adress" placeholder ="Publisher Address"/></td>
-           </tr>
-           <tr>
-               <th>Short Description</th>
-               <td><input type="text"  name="short_description" placeholder ="Short Description"/></td>
-           </tr>
-           <tr>
-               <th>Size</th>
-               <td><input type="text"  name="size" placeholder ="Size"/></td>
-           </tr>
-           <tr>
-               <th>Status</th>
-               <td><input type="text"  name="status" placeholder ="Status"/></td>
-           </tr>
-           <tr>
-               <input type="hidden" name="inv_id" value="<?php echo $data['inv_id'] ?>">
-               <td><button  type= "submit">Save Changes</button></td>
-               <td><a href= "index.php"><button type="button">Back</button></a></td>
-           </tr>
-       </table>
-   </form >
+<div class="container"> 
+<h2 class="p-4">Update ITEM <?php echo $data['title'] ?></h2>
+<!-- Extended default form grid -->
+<form action="actions/a_update.php" method= "post">
+  <!-- Grid row -->
+  <div class="form-row">
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Title</label>
+      <input type="text" name="title" class="form-control" id="inputEmail4" placeholder="Title" value="<?php echo $data['title'] ?>">
+    </div>
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Type</label>
+      <input type="text" name="type" class="form-control" id="inputPassword4" placeholder="Type" value="<?php echo $data['type'] ?>">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">IMAGE LINK</label>
+    <input type="text" name="image" class="form-control" id="exampleFormControlInput1" placeholder="imagelink" value="<?php echo $data['image'] ?>">
+  </div>
 
-</fieldset >
+  <div class="form-row">
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Author First Name</label>
+      <input type="text" name= "auth_first_name" class="form-control" id="inputEmail4" placeholder="Author First Name" value="<?php echo $data['auth_first_name'] ?>">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Author</label>
+      <input type="text" name= "author" class="form-control" id="inputEmail4" placeholder="Author" value="<?php echo $data['author'] ?>">
+    </div>
+
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Author Last Name</label>
+      <input type="text" name= "auth_last_name" class="form-control" id="inputPassword4" placeholder="Author Last Name" value="<?php echo $data['auth_last_name'] ?>">
+    </div>
+  </div>
+  <div class="form-row">
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">ISBN</label>
+      <input type="text" name="ISBN" class="form-control" id="inputEmail4" placeholder="ISBN" value="<?php echo $data['ISBN'] ?>">
+    </div>
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Publisher</label>
+      <input type="text" name="publisher" class="form-control" id="inputPassword4" placeholder="Publisher" value="<?php echo $data['publisher'] ?>">
+    </div>
+  </div>
+  <div class="form-row">
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Publishing date</label>
+      <input type="text" name="publish_date" class="form-control" id="inputEmail4" placeholder="Publishing Date" value="<?php echo $data['publish_date'] ?>">
+    </div>
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Publisher Address</label>
+      <input type="text" name="pub_adress" class="form-control" id="inputPassword4" placeholder="Publisher Address" value="<?php echo $data['pub_adress'] ?>">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Short Description</label>
+    <textarea type="text" class="form-control"name="short_description" id="exampleFormControlTextarea1" rows="3" ><?php echo $data['short_description'] ?></textarea>
+  </div>
+  <div class="form-row">
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Size</label>
+      <input type="text" name="size" class="form-control" id="inputEmail4" placeholder="Size"  value="<?php echo $data['size'] ?>">
+    </div>
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Status</label>
+      <input type="text" name="status" class="form-control" id="inputPassword4" placeholder="Status"  value="<?php echo $data['status'] ?>">
+    </div>
+  </div>
+  <input type="hidden" name="inv_id" value="<?php echo $data['inv_id'] ?>">
+  <button type="submit" class="btn btn-primary btn-md">Update Item</button>
+</form>
+
+
+    </div>
 
 </body>
 </html>

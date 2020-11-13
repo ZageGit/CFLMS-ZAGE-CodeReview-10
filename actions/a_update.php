@@ -5,7 +5,6 @@ require_once 'db_connect.php';
 if ($_POST['inv_id']) {
 	
 	$id = $_POST['inv_id'];
-
     $inv_title = $_POST['title'];
     $inv_type = $_POST['type'];
     $inv_author = $_POST['author'];
@@ -22,7 +21,7 @@ if ($_POST['inv_id']) {
 
 	$sql = "UPDATE `inventory` SET `title`= '$inv_title',`type`= '$inv_type',`author`= '$inv_author',`auth_first_name`= '$inv_auth_first_name',
 				   `auth_last_name`= '$inv_auth_last_name',`image`= '$inv_image',`ISBN`= '$inv_isbn',`publisher`= '$inv_publisher',`publish_date`= '$inv_pub_date',
-				   `pub_adress`= '$inv_pub_address',`short_description`= '$inv_short_descr',`size`= '$inv_size',`status`= '$inv_status'";
+				   `pub_adress`= '$inv_pub_address',`short_description`= '$inv_short_descr',`size`= '$inv_size',`status`= '$inv_status' WHERE inv_id = {$id} ";
 
 	if ($connect->query($sql) === TRUE) {
 		echo "update succesfull!";
