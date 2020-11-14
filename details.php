@@ -57,7 +57,7 @@ if ($_GET['inv_id']) {
     </ul>
   </div>
 </nav>
-
+<div class="container">
            <?php 
 
 $sql = "SELECT * from inventory WHERE inv_id = {$id}";
@@ -66,7 +66,63 @@ $result =  mysqli_query($connect, $sql);//  $connect->query($sql);
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
      echo  "
-     <div class='card col-3'>
+
+ <div class='jumbotron'>
+  <h1 class='display-4'>".$row['title']."</h1>
+  <hr class='my-4'>
+  <p>Publishing Date: ".$row['publish_date']."</p>
+  <p>Publisher: ".$row['publisher']."</p>
+  <p>Type: ".$row['type']."</p>
+  <p>Status: ".$row['status']."</p>
+
+
+  <a href='update.php?inv_id=".$row['inv_id']."'><button type='button' class='btn btn-primary'>Update</button></a>
+  <a href='delete.php?inv_id=".$row['inv_id']."'><button type='button' class='btn btn-danger'>Delete</button></a>
+</div>
+<div class='text-center'>
+  <img src='".$row['image']."' class='rounded' alt='".$row['title']."'>
+</div>
+
+<div class='text-center'>
+<p>".$row['short_description']."</p>
+</div>
+
+
+<ul class='list-group list-group-flush'>
+  <li class='list-group-item'>1. ID: ".$row['inv_id']." </li>
+  <li class='list-group-item'>2. type: ".$row['type']." </li>
+  <li class='list-group-item'>3. title: ".$row['title']." </li>
+  <li class='list-group-item'>4. author: ".$row['author']." </li>
+  <li class='list-group-item'>5. ISBN: ".$row['ISBN']." </li>
+  <li class='list-group-item'>6. publishing date: ".$row['publish_date']." </li>
+  <li class='list-group-item'>7. publisher: ".$row['publisher']." </li>
+  <li class='list-group-item'>8. publisher address: ".$row['pub_adress']." </li>
+  <li class='list-group-item'>9. publisher size: ".$row['size']." </li>
+  <li class='list-group-item'>10. status: ".$row['status']." </li>
+</ul>
+" ;
+
+  }
+} else {
+   echo "No date available!";
+}
+
+           ?>
+</div>
+
+</body>
+</html>
+
+<?php 
+} else {
+	echo "nothing";
+}
+?>
+
+
+
+
+<!-- <div class='card col-3'>
      <img class='card-img-top' src='".$row['image']."' alt='Card image cap'>
        <div class='card-body'>
          <h5 class='card-title'>".$row['title']."</h5>
@@ -80,24 +136,4 @@ if ($result->num_rows > 0) {
        <a href='update.php?inv_id=".$row['inv_id']."'><button type='button' class='btn btn-primary'>Update</button></a>
        <a href='delete.php?inv_id=".$row['inv_id']."'><button type='button' class='btn btn-danger'>Delete</button></a>
      </div>
- </div>
-" ;
-
-  }
-} else {
-   echo "No date available!";
-}
-
-           ?>
-       </tbody>
-   </table>
-</div>
-
-</body>
-</html>
-
-<?php 
-} else {
-	echo "nothing";
-}
-?>
+ </div> -->
