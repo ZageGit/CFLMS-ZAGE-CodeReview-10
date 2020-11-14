@@ -125,6 +125,10 @@ if ($result->num_rows > 0) {
 
            ?>
 </div>
+<nav class="navbar navbar-dark bg-dark fixed-bottom text-white">
+  <a class="navbar-brand">XTREME LIBRARY</a>
+    <a class="nav-link" href="logout.php?logout"><button type="button" class="btn btn-danger">Logout</button></a>
+</nav>
 
 </body>
 </html>
@@ -137,19 +141,3 @@ if ($result->num_rows > 0) {
 
 
 
-
-<!-- <div class='card col-3'>
-     <img class='card-img-top' src='".$row['image']."' alt='Card image cap'>
-       <div class='card-body'>
-         <h5 class='card-title'>".$row['title']."</h5>
-         <p class='card-text'>".$row['short_description']."</p>
-         </div>
-           <ul class='list-group list-group-flush'>
-           <li class='list-group-item'>Type: ".$row['type']."</li>
-           <li class='list-group-item'>Author: ".$row['author']."</li>
-      </ul>
-     <div class='card-body'>
-       <a href='update.php?inv_id=".$row['inv_id']."'><button type='button' class='btn btn-primary'>Update</button></a>
-       <a href='delete.php?inv_id=".$row['inv_id']."'><button type='button' class='btn btn-danger'>Delete</button></a>
-     </div>
- </div> -->

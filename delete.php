@@ -115,6 +115,11 @@ if ($result->num_rows > 0) {
    </div>
 </div>
 </div>
+<nav class="navbar navbar-dark bg-dark fixed-bottom text-white">
+  <a class="navbar-brand">XTREME LIBRARY</a>
+    <a class="nav-link" href="logout.php?logout"><button type="button" class="btn btn-danger">Logout</button></a>
+</nav>
+
 </body>
 </html>
 
