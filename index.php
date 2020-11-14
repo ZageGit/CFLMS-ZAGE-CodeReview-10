@@ -52,6 +52,8 @@
   <div class="container">
     <h1 class="display-4">BIG-EFFING-LIBRARY</h1>
     <p class="lead">We offer a ton of non-modern types of media for you, we sell you what nobody wants anymore!</p>
+    <p class="lead">See below all available items!</p>
+
   </div>
 </div>
 <div class="container">
