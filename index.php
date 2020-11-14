@@ -1,4 +1,14 @@
 <?php 
+
+ob_start();
+session_start();
+
+if( !isset($_SESSION['user']) ) {
+    header("Location: login.php");
+    exit;
+   } 
+
+
    require_once 'actions/db_connect.php';
 ?>
 
@@ -44,6 +54,15 @@
       <li class="nav-item">
         <a class="nav-link" href="publisher.php">Publisher</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="register.php">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.php">Login</a>
+      </li>
+
+
+
     </ul>
   </div>
 </nav>
@@ -56,7 +75,8 @@
 
   </div>
 </div>
-<div class="container">
+<div class="container">          
+           <a  href="logout.php?logout">Sign Out</a>
   <div class="row">
           <?php 
 

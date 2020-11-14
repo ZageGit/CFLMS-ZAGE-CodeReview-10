@@ -1,4 +1,11 @@
 <?php
+ob_start();
+session_start();
+
+if( !isset($_SESSION['user']) ) {
+    header("Location: login.php");
+    exit;
+   } 
 
 require_once 'actions/db_connect.php';
 
@@ -31,7 +38,7 @@ if ($_GET['publisher']) {
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
 
@@ -53,6 +60,14 @@ if ($_GET['publisher']) {
       <li class="nav-item">
         <a class="nav-link" href="publisher.php">Publisher</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="register.php">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.php">Login</a>
+      </li>
+
+
    </ul>
   </div>
 </nav>
