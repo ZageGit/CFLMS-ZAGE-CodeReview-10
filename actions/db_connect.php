@@ -5,7 +5,7 @@ error_reporting( ~E_DEPRECATED & ~E_NOTICE );
 $localhost = "localhost";
 $username ="root";
 $password = "";
-$dbname = "cr10_zage_biglibrary";
+$dbname = "cr10-zage-biglibrary";
 
 
 

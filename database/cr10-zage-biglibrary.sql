@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2020 at 07:08 PM
+-- Generation Time: Nov 14, 2020 at 08:54 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cr10_zage_biglibrary`
+-- Database: `cr10-zage-biglibrary`
 --
-CREATE DATABASE IF NOT EXISTS `cr10_zage_biglibrary` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `cr10_zage_biglibrary`;
+CREATE DATABASE IF NOT EXISTS `cr10-zage-biglibrary` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `cr10-zage-biglibrary`;
 
 -- --------------------------------------------------------
 
@@ -51,7 +51,7 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`inv_id`, `type`, `title`, `image`, `author`, `auth_first_name`, `auth_last_name`, `ISBN`, `short_description`, `publish_date`, `publisher`, `pub_adress`, `size`, `status`) VALUES
-(13, 'DVD', 'Marvel Studios Avengers Endgame', 'https://m.media-amazon.com/images/I/91epzdXTTHL._AC_UY218_.jpg', 'Anthony Russo', 'Anthony', 'Russo', '9781234567897', 'Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. ... The film serves as a conclusion to the story of the MCU up t', '2018-04-27', 'Marvel Studios', 'Main Avenue 12, 1569 New York', 'Big', 'available'),
+(13, 'DVD', 'Marvel Studios Avengers Endgame', 'https://m.media-amazon.com/images/I/91epzdXTTHL._AC_UY218_.jpg', 'Anthony Russo', 'Anthony', 'Russo', '9781234567897', 'Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. ... The film serves as a conclusion to the story of the MCU up t', '2018-04-27', 'Marvel Studios', 'Main Avenue 12, 1569 New York', 'Small', 'available'),
 (15, '', 'Avengers: Infinity War [dt./OV]', 'https://m.media-amazon.com/images/S/aplus-media/vc/5547601c-ed8a-4464-974c-d06a511d6332._CR0,0,300,400_PT0_SX300__.png', 'Anthony Russo', 'Anthony', 'Russo', '9788941235465', 'In the film, the Avengers and the Guardians of the Galaxy attempt to prevent Thanos from collecting the six all-powerful Infinity Stones as part of his quest to kill half of all life in the universe. The film was announced in October 2014 as Avengers: Inf', '0000-00-00', 'Marvel Studios', 'Main Avenue 12, 1569 New York', 'big', 'not available'),
 (16, 'DVD', 'Avengers: Age of Ultron', 'https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_.jpg', 'Joss Whedon', 'Joss', 'hedon', '9788947645465', 'Summaries. When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and its up to Earths mightiest heroes to stop the villainous Ultron from enacting his terrible plan.', '2015-04-13', 'Marvel Studios', 'Main Avenue 12, 1569 New York', 'Big', 'available'),
 (17, 'Book', '1984', 'https://images-na.ssl-images-amazon.com/images/I/51-ErD3F1JL.jpg', 'George Orwell', 'George', 'Orwell', '9788896345465', '1984 is a dystopian novella by George Orwell published in 1949, which follows the life of Winston Smith, a low ranking member of the Party, who is frustrated by the omnipresent eyes of the party, and its ominous ruler Big Brother. Big Brother controls', '1949-12-08', 'SeckerWarburg', 'Camerastreet 18, 4856 California', 'Medium', 'not available'),
@@ -82,7 +82,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userId`, `userName`, `userEmail`, `userPass`) VALUES
-(1, 'test', 'test@test.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
+(1, 'test', 'test@test.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92'),
+(6, 'Irgendwere', 'irgendwer@test.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 
 --
 -- Indexes for dumped tables
@@ -109,13 +110,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `inv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `inv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
