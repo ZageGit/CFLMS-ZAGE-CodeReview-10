@@ -7,20 +7,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-   <style type= "text/css">
-       fieldset {
-           margin: auto;
-            margin-top: 100px;
-           width: 50% ;
-       }
-
-       table tr th  {
-           padding-top: 20px;
-       }
-   </style>
-
 </head>
 <body>
 
@@ -72,7 +58,11 @@
     <!-- Default input -->
     <div class="form-group col-md-6">
       <label for="inputPassword4">Type</label>
-      <input type="text" name="type" class="form-control" id="inputPassword4" placeholder="Type">
+      <select class="form-control" id="exampleFormControlSelect1" name="type">
+      <option>book</option>
+      <option>cd</option>
+      <option>dvd</option>
+    </select>
     </div>
   </div>
   <div class="form-group">
@@ -128,9 +118,14 @@
   <div class="form-row">
     <!-- Default input -->
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Size</label>
-      <input type="text" name="size" class="form-control" id="inputEmail4" placeholder="Size">
+      <label for="inputPassword4">Size</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="size">
+      <option>small</option>
+      <option>medium</option>
+      <option>big</option>
+    </select>
     </div>
+
     <!-- Default input -->
     <div class="form-group col-md-6">
       <label for="inputPassword4">Status</label>

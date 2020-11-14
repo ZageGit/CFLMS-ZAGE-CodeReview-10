@@ -77,7 +77,11 @@ if ($_GET['inv_id']) {
     <!-- Default input -->
     <div class="form-group col-md-6">
       <label for="inputPassword4">Type</label>
-      <input type="text" name="type" class="form-control" id="inputPassword4" placeholder="Type" value="<?php echo $data['type'] ?>">
+      <select class="form-control" id="exampleFormControlSelect1" name="type">
+      <option>book</option>
+      <option>cd</option>
+      <option>dvd</option>
+    </select>
     </div>
   </div>
   <div class="form-group">
@@ -133,8 +137,12 @@ if ($_GET['inv_id']) {
   <div class="form-row">
     <!-- Default input -->
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Size</label>
-      <input type="text" name="size" class="form-control" id="inputEmail4" placeholder="Size"  value="<?php echo $data['size'] ?>">
+      <label for="inputPassword4">Size</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="size">
+      <option>small</option>
+      <option>medium</option>
+      <option>big</option>
+    </select>
     </div>
     <!-- Default input -->
     <div class="form-group col-md-6">
