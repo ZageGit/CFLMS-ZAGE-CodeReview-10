@@ -175,7 +175,7 @@ if ($_GET['inv_id']) {
 
 
     </div>
-    <nav class="navbar navbar-dark bg-dark sticky-bottom text-white mt-2">
+    <nav class="navbar navbar-dark bg-dark fixed-bottom text-white mt-2">
   <a class="navbar-brand">XTREME LIBRARY</a>
     <a class="nav-link" href="logout.php?logout"><button type="button" class="btn btn-danger">Logout</button></a>
 </nav>
