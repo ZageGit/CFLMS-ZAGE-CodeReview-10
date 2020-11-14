@@ -78,9 +78,10 @@ if ($_GET['inv_id']) {
     <div class="form-group col-md-6">
       <label for="inputPassword4">Type</label>
       <select class="form-control" id="exampleFormControlSelect1" name="type">
-      <option>book</option>
-      <option>cd</option>
-      <option>dvd</option>
+      <option><?php echo $data['type'] ?></option>
+      <option>Book</option>
+      <option>CD</option>
+      <option>DVD</option>
     </select>
     </div>
   </div>
@@ -95,10 +96,10 @@ if ($_GET['inv_id']) {
       <label for="inputEmail4">Author First Name</label>
       <input type="text" name= "auth_first_name" class="form-control" id="inputEmail4" placeholder="Author First Name" value="<?php echo $data['auth_first_name'] ?>">
     </div>
-    <div class="form-group col-md-6">
+    <!-- <div class="form-group col-md-6">
       <label for="inputEmail4">Author</label>
       <input type="text" name= "author" class="form-control" id="inputEmail4" placeholder="Author" value="<?php echo $data['author'] ?>">
-    </div>
+    </div> -->
 
     <!-- Default input -->
     <div class="form-group col-md-6">
@@ -122,7 +123,7 @@ if ($_GET['inv_id']) {
     <!-- Default input -->
     <div class="form-group col-md-6">
       <label for="inputEmail4">Publishing date</label>
-      <input type="text" name="publish_date" class="form-control" id="inputEmail4" placeholder="Publishing Date" value="<?php echo $data['publish_date'] ?>">
+      <input class="form-control"name="publish_date"  type="date" value="<?php echo $data['publish_date'] ?>" id="example-date-input">
     </div>
     <!-- Default input -->
     <div class="form-group col-md-6">
@@ -139,15 +140,16 @@ if ($_GET['inv_id']) {
     <div class="form-group col-md-6">
       <label for="inputPassword4">Size</label>
       <select class="form-control" id="exampleFormControlSelect1" name="size">
-      <option>small</option>
-      <option>medium</option>
-      <option>big</option>
+      <option>Small</option>
+      <option>Medium</option>
+      <option>Big</option>
     </select>
     </div>
     <!-- Default input -->
     <div class="form-group col-md-6">
       <label for="inputPassword4">Status</label>
       <select class="form-control" id="exampleFormControlSelect1" name="status">
+      <option><?php echo $data['status'] ?></option>
       <option>available</option>
       <option>not available</option>
     </select>

@@ -74,7 +74,7 @@
                     </div>
                       <ul class='list-group list-group-flush'>
                           <li class='list-group-item'>Type: ".$row['type']."</li>
-                          <li class='list-group-item'>Author: ".$row['author']."</li>
+                          <li class='list-group-item'>Author: ".$row['auth_first_name']." ".$row['auth_last_name']."</li>
                       </ul>
                 <div class='card-body'>
                 <a href='details.php?inv_id=".$row['inv_id']."'><button type='button' class='btn btn-primary'>Details</button></a>

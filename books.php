@@ -55,7 +55,7 @@
 
  <?php 
 
-$sql = "SELECT author,inv_id, auth_first_name, auth_last_name, image, publisher,publish_date, short_description, status, title, type FROM inventory WHERE type='book'";
+$sql = "SELECT author,inv_id, auth_first_name, auth_last_name, image, publisher,publish_date, short_description, status, title, type FROM inventory WHERE type='Book'";
 $result =  mysqli_query($connect, $sql);
 
 if ($result->num_rows > 0) {
