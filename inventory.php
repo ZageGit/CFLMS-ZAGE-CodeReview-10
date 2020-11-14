@@ -46,7 +46,8 @@
     </ul>
   </div>
 </nav>
-
+<div class="container">
+<div class="row">
 <?php 
 
 $sql = "SELECT * FROM inventory";
@@ -55,19 +56,17 @@ $result =  mysqli_query($connect, $sql);//  $connect->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       echo  "
-      <div class='card col-3'>
+      <div class='card col-3 m-2'>
       <img class='card-img-top' src='".$row['image']."' alt='Card image cap'>
         <div class='card-body'>
           <h5 class='card-title'>".$row['title']."</h5>
-          <p class='card-text'>".$row['short_description']."</p>
-          </div>
+         </div>
             <ul class='list-group list-group-flush'>
-                <li class='list-group-item'>".$row['type']."</li>
-                <li class='list-group-item'>".$row['author']."</li>
+                <li class='list-group-item'>Type: ".$row['type']."</li>
+                <li class='list-group-item'>Author: ".$row['author']."</li>
             </ul>
       <div class='card-body'>
-        <a href='details.php?inv_id=".$row['inv_id']."' class='card-link'>Details</a>
-        <a href='update.php?inv_id=".$row['inv_id']."' class='card-link'>Update</a>
+      <a href='details.php?inv_id=".$row['inv_id']."'><button type='button' class='btn btn-primary'>Details</button></a>
       </div>
   </div>
 " ;
@@ -78,5 +77,7 @@ if ($result->num_rows > 0) {
   }
 ?> 
 
+</div>
+</div>
 </body>
 </html>

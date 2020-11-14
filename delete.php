@@ -76,9 +76,9 @@ if ($result->num_rows > 0) {
            <p class='card-text'>".$row['short_description']."</p>
            </div>
              <ul class='list-group list-group-flush'>
-                 <li class='list-group-item'>".$row['type']."</li>
-                 <li class='list-group-item'>".$row['author']."</li>
-             </ul>
+             <li class='list-group-item'>Type: ".$row['type']."</li>
+             <li class='list-group-item'>Author: ".$row['author']."</li>
+          </ul>
        <div class='card-body'>
   " ;
     }
