@@ -4,16 +4,17 @@
 
 <html>
 <head>
-   <title>All Current Items</title>
+   <title>BIG-EFFING-LIBRARY</title>
 
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="css/style.css">
-   
+
+
 </head>
-<body id="dvd_body">
+<body>
 <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
   <a class="navbar-brand" href="index.php">XTREME LIBRARY</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,55 +35,54 @@
       <li class="nav-item">
         <a class="nav-link" href="cds.php">CD's</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="dvds.php">DVD's</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="create.php">Create</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="publisher.php">Publisher</a>
+        <a class="nav-link active" href="publisher.php">Publisher</a>
       </li>
-   </ul>
+    </ul>
   </div>
 </nav>
 
-
-
-
-
-
-
-<?php 
-
-$sql = "SELECT author,inv_id, auth_first_name, auth_last_name, image, publisher,publish_date, short_description, status, title, type FROM inventory WHERE type='dvd'";
-$result =  mysqli_query($connect, $sql);
-
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-    echo  "
-    <div class='card col-3'>
-    <img class='card-img-top' src='".$row['image']."' alt='Card image cap'>
-      <div class='card-body'>
-        <h5 class='card-title'>".$row['title']."</h5>
-        <p class='card-text'>".$row['short_description']."</p>
-        </div>
-          <ul class='list-group list-group-flush'>
-              <li class='list-group-item'>".$row['type']."</li>
-              <li class='list-group-item'>".$row['author']."</li>
-          </ul>
-    <div class='card-body'>
-      <a href='details.php?inv_id=".$row['inv_id']."' class='card-link'>Details</a>
-      <a href='update.php?inv_id=".$row['inv_id']."' class='card-link'>Update</a>
-    </div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">BIG-EFFING-LIBRARY</h1>
+    <p class="lead">We offer a ton of non-modern types of media for you, we sell you what nobody wants anymore!</p>
+  </div>
 </div>
-" ;
+<div class="container">
+  <div class="row">
+  <ul class="list-group col-6">
 
-  }
-} else {
-  echo "No date available!";
-}
-?> 
+          <?php 
+
+          $sql = "SELECT publisher FROM inventory GROUP BY publisher";
+          $result =  mysqli_query($connect, $sql);//  $connect->query($sql);
+
+          if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
+                echo  "
+               <li class='list-group-item'>".$row['publisher']."<a href='pub_details.php?publisher=".$row['publisher']."' class='card-link'>Details</a>
+               </li>
+               " ;
+            
+              }
+            } else {
+              echo "No date available!";
+            }
+            ?> 
+</ul>
+</div>
+  </div>
+
+
 
 </body>
 </html>
+
+
+

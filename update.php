@@ -54,6 +54,10 @@ if ($_GET['inv_id']) {
       <li class="nav-item">
         <a class="nav-link" href="create.php">Create</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="publisher.php">Publisher</a>
+      </li>
+
     </ul>
   </div>
 </nav>
@@ -135,7 +139,10 @@ if ($_GET['inv_id']) {
     <!-- Default input -->
     <div class="form-group col-md-6">
       <label for="inputPassword4">Status</label>
-      <input type="text" name="status" class="form-control" id="inputPassword4" placeholder="Status"  value="<?php echo $data['status'] ?>">
+      <select class="form-control" id="exampleFormControlSelect1" name="status">
+      <option>available</option>
+      <option>not available</option>
+    </select>
     </div>
   </div>
   <input type="hidden" name="inv_id" value="<?php echo $data['inv_id'] ?>">

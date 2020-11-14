@@ -51,8 +51,10 @@
       <li class="nav-item">
         <a class="nav-link active" href="create.php">Create</a>
       </li>
-
-    </ul>
+      <li class="nav-item">
+        <a class="nav-link" href="publisher.php">Publisher</a>
+      </li>
+   </ul>
   </div>
 </nav>
 
@@ -132,10 +134,12 @@
     <!-- Default input -->
     <div class="form-group col-md-6">
       <label for="inputPassword4">Status</label>
-      <input type="text" name="status" class="form-control" id="inputPassword4" placeholder="Status">
+      <select class="form-control" id="exampleFormControlSelect1" name="status">
+      <option>available</option>
+      <option>not available</option>
+    </select>
     </div>
-  </div>
-  <button type="submit" class="btn btn-primary btn-md">Sign in</button>
+  <button type="submit" class="btn btn-primary btn-md">Add to Inventory</button>
 </form>
 
 

@@ -24,28 +24,40 @@ if ($_GET['inv_id']) {
 
 </head>
 <body>
-<div class ="manageMeal">
-   <a href= "create.php"><button type="button" >Add Meal</button></a>
-   <table  border="1" cellspacing= "0" cellpadding="0">
-       <thead>
-           <tr>
-               <th>Inv ID</th>
-               <th>Title</th>
-               <th>Type</th>
-               <th >Author</th>
-               <th >Author First Name</th>
-               <th >Author Last Name</th>
-               <th >Image</th>
-               <th >ISBN</th>
-               <th >Publisher</th>
-               <th >Publish Date</th>
-               <th >Publisher Adress</th>
-               <th >Short Description</th>
-               <th >Size</th>
-               <th >Status</th>
-           </tr>
-       </thead>
-       <tbody>
+
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+  <a class="navbar-brand" href="index.php">XTREME LIBRARY</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+    <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="inventory.php">All items</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="books.php">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cds.php">CD's</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="dvds.php">DVD's</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="create.php">Create</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="publisher.php">Publisher</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
            <?php 
 
 $sql = "SELECT * from inventory WHERE inv_id = {$id}";
@@ -53,27 +65,23 @@ $result =  mysqli_query($connect, $sql);//  $connect->query($sql);
 
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
-     echo  "<tr>
-            <td>" .$row['inv_id']."</td>
-            <td>" .$row['title']."</td>
-            <td>" .$row['type']."</td>
-            <td>" .$row['author']."</td>
-            <td>" .$row['auth_first_name']."</td>
-            <td>" .$row['auth_last_name']."</td>
-            <td>" .$row['image']."</td>
-            <td>" .$row['ISBN']."</td>
-            <td>" .$row['publisher']."</td>
-            <td>" .$row['publish_date']."</td>
-            <td>" .$row['pub_adress']."</td>
-            <td>" .$row['short_description']."</td>
-            <td>" .$row['size']."</td>
-            <td>" .$row['status']."</td>
-            <td>
-                <a href='update.php?inv_id=" .$row['inv_id']."'><button type='button'>Edit</button></a>
-                <a href='delete.php?inv_id=" .$row['inv_id']."'><button type='button'>Delete</button></a>
-                <a href='details.php?inv_id=" .$row['inv_id']."'><button type='button'>Details</button></a>
-            </td>
-        </tr>" ;
+     echo  "
+     <div class='card col-3'>
+     <img class='card-img-top' src='".$row['image']."' alt='Card image cap'>
+       <div class='card-body'>
+         <h5 class='card-title'>".$row['title']."</h5>
+         <p class='card-text'>".$row['short_description']."</p>
+         </div>
+           <ul class='list-group list-group-flush'>
+               <li class='list-group-item'>".$row['type']."</li>
+               <li class='list-group-item'>".$row['author']."</li>
+           </ul>
+     <div class='card-body'>
+       <a href='update.php?inv_id=".$row['inv_id']."' class='card-link'>Update</a>
+       <a href='delete.php?inv_id=".$row['inv_id']."' class='card-link'>Delete</a>
+     </div>
+ </div>
+" ;
 
   }
 } else {

@@ -39,8 +39,10 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="create.php">Create</a>
+      </li>   
+     <li class="nav-item">
+        <a class="nav-link" href="publisher.php">Publisher</a>
       </li>
-
     </ul>
   </div>
 </nav>

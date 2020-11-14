@@ -41,7 +41,9 @@
       <li class="nav-item">
         <a class="nav-link" href="create.php">Create</a>
       </li>
-
+      <li class="nav-item">
+        <a class="nav-link" href="publisher.php">Publisher</a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -74,7 +76,6 @@
                       </ul>
                 <div class='card-body'>
                   <a href='details.php?inv_id=".$row['inv_id']."' class='card-link'>Details</a>
-                  <a href='update.php?inv_id=".$row['inv_id']."' class='card-link'>Update</a>
                 </div>
             </div>
           " ;

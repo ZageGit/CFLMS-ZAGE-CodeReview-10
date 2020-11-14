@@ -19,7 +19,7 @@ if($_POST){
 
     $sql_inv ="INSERT INTO inventory (title, type, author, auth_first_name, auth_last_name, image, ISBN, publisher, publish_date, pub_adress, short_description, size, status)
     VALUES ('$inv_title','$inv_type','$inv_author','$inv_auth_first_name','$inv_auth_last_name','$inv_image','$inv_isbn','$inv_publisher','$inv_pub_date','$inv_pub_address','$inv_short_descr','$inv_size','$inv_status')";
-
+   
     if($connect->query($sql_inv)) {
         echo "Success ingredients <br>";
         echo "<a href='../index.php'><button type='button'>HOME</button></a> <br>";
